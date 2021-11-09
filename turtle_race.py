@@ -10,6 +10,12 @@ import random
 turtles = list()
 
 def setup():
+    """The setup function uses three lists and a for loop to generate the
+        turtles used in the program. The global permission allows the use
+        of the main turtles list within setup(). The for loop creates a turtle,
+        lifts its pen, and moves it to the startline before dropping the pen again.
+        Startline is set at the left edge of the turtle window.
+    """
     global turtles
     startline = -480
     
@@ -21,7 +27,9 @@ def setup():
         new_turtle = turtle.Turtle()
         new_turtle.shape(turtle_shape[i])
         new_turtle.color(turtle_color[i])
+        new_turtle.penup()
         new_turtle.setpos(startline, turtle_ycor[i])
+        new_turtle.pendown()
         turtles.append(new_turtle)
 
 setup()
