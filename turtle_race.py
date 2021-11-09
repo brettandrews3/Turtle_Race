@@ -4,10 +4,10 @@ of the turtle window. On each turn, each icon moves 0-2 spaces, randomly generat
 by the random module. The race is complete when a turtle crosses the finish line.
 """
 
-import turtle
-import random
+#import turtle
+#import random
 
-turtles = list()
+#turtles = list()
 
 def setup():
     """The setup function uses three lists and a for loop to generate the
@@ -58,6 +58,10 @@ def race():
                 winner_color = current_turtle.color()
                 print(winner_color[0], 'wins the race!')
 
-setup()
-race()
-turtle.mainloop()
+if __name__ == '__main__':
+    import turtle
+    import random
+    turtles = list()
+    setup()
+    race()
+    turtle.mainloop()
