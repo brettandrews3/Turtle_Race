@@ -17,7 +17,10 @@ def setup():
         Startline is set at the left edge of the turtle window.
     """
     global turtles
-    startline = -480
+    startline = -620
+    screen = turtle.Screen()
+    screen.setup(1290, 720)
+    screen.bgpic('pavement.gif')
     
     turtle_color = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
     turtle_ycor = [60, 40, 20, 0, -20, -40, -60]
@@ -31,6 +34,20 @@ def setup():
         new_turtle.setpos(startline, turtle_ycor[i])
         new_turtle.pendown()
         turtles.append(new_turtle)
+
+def race():
+    """Here you go, race fans: the explanation on how this sucker works!
+    """
+    global turtles
+    winner = False
+    finishline = 590
+    
+    while not winner:
+        for current_turtle in turtles:
+            current_turtle.forward(randint(0,2))
+
+
+
 
 setup()
 turtle.mainloop()
